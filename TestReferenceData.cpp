@@ -10,7 +10,8 @@ PYBIND11_MODULE(sbe, m) {
     py::class_<sbe::Header>(m,"Header")
         .def("wrap",&sbe::Header::wrap)
         //.def("fragment",static_cast<std::uint8_t (sbe::Header::*)() const>(&sbe::Header::fragment)); // this works for c++<=14
-        .def("fragment",py::overload_cast<>(&sbe::Header::fragment,py::const_));
+        .def("fragment",py::overload_cast<>(&sbe::Header::fragment,py::const_)),
+        .def("fragment",py::overload_cast<>(&sbe::Header::fragmentMax,py::const_));
 
     py::class_<sbe::ReferenceData>(m,"ReferenceData")
         .def("wrap",&sbe::ReferenceData::wrapForDecode);
