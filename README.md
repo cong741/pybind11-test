@@ -7,3 +7,10 @@ $ cd example
 $ mkdir build && cd build
 $ cmake .. && make -j
 ```
+
+## Bind the SBE
+
+```
+$ mkdir build && cd build
+$ cmake .. && make -j
+```
